@@ -8,7 +8,7 @@
 
 #import "DownloadManager.h"
 
-@interface DownloadManager()<NSCopying,NSURLSessionDelegate>
+@interface DownloadManager()<NSCopying,NSURLSessionDelegate,NSURLSessionDataDelegate>
 
 /**保存所有任务（注：用下载地址／后作为key）*/
 @property (nonatomic,strong)NSMutableDictionary * tasks;
@@ -170,21 +170,21 @@ static DownloadManager * _downloadMqanager;
         
     }else{
         for (SessionModel *sessionModel  in self.sessionModelsArray) {
-            <#statements#>
+            if ([sessionModel.url isEqualToString:url]) {
+                sessionModel.url = url;
+                sessionModel.progressBlock = progressBlock;
+                sessionModel.stateBlock = stateBlock;
+                sessionModel.outStream = stream;
+                sessionModel.startTime = [NSDate date];
+                sessionModel.fileName = ZFFileName(url);
+                [self.sessionModels setValue:sessionModel forKey:@(task.taskIdentifier).stringValue];
+            }
         }
         
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    [self start:url];
 }
 
 - (void)handle:(NSString *)url
@@ -271,6 +271,69 @@ static DownloadManager * _downloadMqanager;
     return (NSURLSessionDataTask *)[self.tasks valueForKey:ZFFileName(url)];
     
 }
+
+#pragma mark NSURLSessionDataDelegate
+/**
+ *接收到响应
+ */
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSHTTPURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
+{
+    SessionModel * model = [self getSessionModel:dataTask.taskIdentifier];
+    
+    //打开流
+    [model.outStream open];
+    
+    //获得服务器这次请求，返回数据的总长度
+    NSInteger totalLength = [response.allHeaderFields[@"Content-Length"] integerValue] + ZFDownloadLength(model.url);
+    model.totalLength = totalLength;
+    
+    //总文件大小
+    NSString * fileSizeInUnits = [NSString stringWithFormat:@"%.2f %@",[model calculateFileSizeInUnit:(unsigned long long)totalLength],
+                                  [model calculateUnit:(unsigned long long)totalLength]];
+    model.totalSize = fileSizeInUnits;
+    //更新数据
+    [self save:self.sessionModelsArray];
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
