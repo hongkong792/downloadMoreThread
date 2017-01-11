@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G0C-rR-qbD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--初始化-->
+        <scene sceneID="Hec-7h-96L">
+            <objects>
+                <tabBarController title="初始化" id="G0C-rR-qbD" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="VGc-7M-8CJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="muA-aA-qcK" kind="relationship" relationship="viewControllers" id="rtu-EW-yMq"/>
+                        <segue destination="9qb-Wl-5fr" kind="relationship" relationship="viewControllers" id="gKd-My-esq"/>
+                        <segue destination="MWS-hP-kxk" kind="relationship" relationship="viewControllers" id="DHb-gt-Cxv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HW9-qD-Zx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1186" y="-96"/>
+        </scene>
+        <!--正在下载-->
+        <scene sceneID="6eu-Kg-OqB">
+            <objects>
+                <tableViewController id="xWe-fm-Ubw" userLabel="正在下载" customClass="DownloadViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="kml-5t-H3F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="2Mg-OP-dLy" customClass="DownloadingTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Mg-OP-dLy" id="gjI-n7-05k">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="文件名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8L3-qr-WzS">
+                                            <rect key="frame" x="8" y="8" width="178" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="下载" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BB-9F-fMf">
+                                            <rect key="frame" x="8" y="48" width="115" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0KB／S" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6N-7H-afg">
+                                            <rect key="frame" x="225" y="50" width="95" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqw-iq-hmQ">
+                                            <rect key="frame" x="321" y="12" width="46" height="51"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="🕗"/>
+                                        </button>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hK1-Np-H44">
+                                            <rect key="frame" x="8" y="37" width="276" height="2"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </progressView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="downloadBtn" destination="Vqw-iq-hmQ" id="D9M-yd-1FT"/>
+                                    <outlet property="fileNameLabel" destination="8L3-qr-WzS" id="jcQ-7t-TbD"/>
+                                    <outlet property="progress" destination="hK1-Np-H44" id="Frc-ak-F8m"/>
+                                    <outlet property="progressLabel" destination="7BB-9F-fMf" id="b2H-KG-COp"/>
+                                    <outlet property="speedLabel" destination="M6N-7H-afg" id="ioc-Ym-Nn7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xWe-fm-Ubw" id="t2H-P3-urw"/>
+                            <outlet property="delegate" destination="xWe-fm-Ubw" id="K3q-uX-NFH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="正在下载" id="Cbc-hB-zCB" userLabel="正在现在"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3T9-HO-Arg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1129" y="112"/>
+        </scene>
+        <!--正在下载-->
+        <scene sceneID="EnR-UO-yLM">
+            <objects>
+                <navigationController id="9qb-Wl-5fr" userLabel="正在下载" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="正在下载" id="B5S-Jo-UFM" userLabel="downloadlist"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UnK-yE-3HK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xWe-fm-Ubw" kind="relationship" relationship="rootViewController" id="0B4-3g-byU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqQ-jQ-lnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="-40"/>
+        </scene>
+        <!--下载完成-->
+        <scene sceneID="Hr2-t5-IQr">
+            <objects>
+                <tableViewController id="N4f-kH-A2C" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="x3l-RH-ITg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="02j-01-eaU" customClass="DownloadedTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="02j-01-eaU" id="lHU-ea-tmN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="N4f-kH-A2C" id="ytE-rC-I01"/>
+                            <outlet property="delegate" destination="N4f-kH-A2C" id="Bf7-SN-Sr8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="下载完成" id="Mvn-eM-Kfg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OrK-Fs-IPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018" y="654"/>
+        </scene>
+        <!--下载完成-->
+        <scene sceneID="TYS-Hk-pmq">
+            <objects>
+                <navigationController id="MWS-hP-kxk" userLabel="下载完成" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="下载完成" id="xCP-so-ZN0"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="55y-JA-cUH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="N4f-kH-A2C" kind="relationship" relationship="rootViewController" id="GV4-RP-5JO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i5U-QE-d6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="654"/>
+        </scene>
+        <!--下载列表-->
+        <scene sceneID="Lvy-R3-10l">
+            <objects>
+                <tableViewController id="mrX-ZB-rPI" customClass="ListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" id="O0I-iO-1em">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" rowHeight="55" id="gxq-Ak-idJ" customClass="ZFListCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gxq-Ak-idJ" id="L2s-Jk-NYa">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InC-Gb-hrw" userLabel="下载选择">
+                                            <rect key="frame" x="24" y="11" width="241" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGI-EI-71v">
+                                            <rect key="frame" x="312" y="6" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="下载"/>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="downloadBtn" destination="pGI-EI-71v" id="tK6-7U-kNO"/>
+                                    <outlet property="titleLabel" destination="InC-Gb-hrw" id="YxA-eR-Fr2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mrX-ZB-rPI" id="nOZ-pG-QDM"/>
+                            <outlet property="delegate" destination="mrX-ZB-rPI" id="qkX-2d-ykq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="下载列表" id="gMT-0V-fZV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uI9-sT-Tgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="-669.71514242878561"/>
+        </scene>
+        <!--下载列表-->
+        <scene sceneID="dSh-Gd-M4r">
+            <objects>
+                <navigationController id="muA-aA-qcK" userLabel="下载列表" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="下载列表" id="Ozp-jV-t2d" userLabel="下载列表"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bec-rH-R7a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mrX-ZB-rPI" kind="relationship" relationship="rootViewController" id="722-uv-K0R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wMg-eV-XXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="-746"/>
+        </scene>
+    </scenes>
+</document>
